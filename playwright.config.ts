@@ -14,8 +14,8 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
-  
+  workers: process.env.CI ? '50%' : undefined,
+
   reporter: [
     ["list"],
     ["html", { outputFolder: "reports/html-report", open: "never" }],
@@ -24,14 +24,14 @@ export default defineConfig({
       suiteTitle: true,
     }],
   ],
-  
+
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL: process.env.BASE_URL,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     trace: 'on-first-retry',
-    headless: false
+    headless: !process.env.CI ? false : true,
   },
 
   /* Configure projects for major browsers */

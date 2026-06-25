@@ -16,12 +16,12 @@ test.beforeEach(async ({ page }) => {
     homepage = new HomePage(page);
 });
 
-test('Verify the Home Page Title', async ({ }) => {
+test('Verify the Home Page Title', { tag: ['@smoke'] }, async ({ }) => {
     const pageTitle = await homepage.getHomePageTitle();
     expect(pageTitle).toBe('My Account');
 });
 
-test('Verify Logout Link In Home Page', async ({ }) => {
+test('Verify Logout Link In Home Page', { tag: ['@sanity'] }, async ({ }) => {
     expect(await homepage.isLogoutLinkExist()).toBeTruthy();
 });
 

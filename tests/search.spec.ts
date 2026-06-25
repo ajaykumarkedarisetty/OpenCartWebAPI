@@ -10,7 +10,7 @@ test.beforeEach(async ({ loginPage }) => {
     );
 });
 
-test('Verify search Functionality', async ({ homePage, searchPage }) => {
+test('Verify search Functionality', { tag: ['@smoke'] }, async ({ homePage, searchPage }) => {
     const pageTitle = await homePage.getHomePageTitle();
     expect(pageTitle).toBe('My Account');
 

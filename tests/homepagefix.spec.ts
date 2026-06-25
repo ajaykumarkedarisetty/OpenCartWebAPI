@@ -8,7 +8,7 @@ test.beforeEach(async ({ loginPage }) => {
     );
 });
 
-test('Verify the Home Page Title', async ({ homePage }) => {
+test('Verify the Home Page Title', { tag: ['@smoke'] }, async ({ homePage }) => {
     const pageTitle = await homePage.getHomePageTitle();
     expect(pageTitle).toBe('My Account');
 });
@@ -17,7 +17,7 @@ test('Verify Logout Link In Home Page', async ({ homePage }) => {
     expect(await homePage.isLogoutLinkExist()).toBeTruthy();
 });
 
-test('Verify Home Page Headers', async ({ homePage }) => {
+test('Verify Home Page Headers', { tag: ['@sanity'] }, async ({ homePage }) => {
     let allHeaders = await homePage.getHomePageHeadersText();
     console.log(`Home Page Headers: ${allHeaders}`);
 

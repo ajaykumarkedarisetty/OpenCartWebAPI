@@ -10,7 +10,7 @@ test.beforeEach(async ({ loginPage }) => {
     );
 });
 
-test('Verify product images count', async ({ homePage, searchPage, productInfoPage }) => {
+test('Verify product images count', { tag: ['@smoke'] }, async ({ homePage, searchPage, productInfoPage }) => {
     await homePage.doSearch('macbook');
     await searchPage.clickProductByName('MacBook Pro');
     let imageCount = await productInfoPage.getProductImageCount();
@@ -50,7 +50,7 @@ for (const row of testDataCsv) {
 
 
 
-test('Verify product added to cart', async ({ homePage, searchPage, productInfoPage, page }) => {
+test('Verify product added to cart', { tag: ['@sanity'] }, async ({ homePage, searchPage, productInfoPage, page }) => {
     await homePage.doSearch('macbook');
     await searchPage.clickProductByName('MacBook Pro');
     await productInfoPage.updateProductQuantity('2');

@@ -7,11 +7,11 @@ test.beforeEach(async ({ registrationPage }) => {
 });
 
 
-test('Verify Registration Page is displayed successfully', async ({ registrationPage }) => {
+test('Verify Registration Page is displayed successfully', { tag: ['@smoke'] }, async ({ registrationPage }) => {
     expect(await registrationPage.getRegistrationHeaderText()).toBe('Register Account');
 });
 
-test('Verify all the sections headers text in registration page', async ({ registrationPage }) => {
+test('Verify all the sections headers text in registration page', { tag: ['@sanity'] }, async ({ registrationPage }) => {
     let sectionHeaders = await registrationPage.getSectionHeaders();
     expect.soft(sectionHeaders).toEqual([
         'Your Personal Details',

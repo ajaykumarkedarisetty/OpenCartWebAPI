@@ -7,7 +7,7 @@ const AUTH_TOKEN = {
 const BASE_URL = "https://gorest.co.in/public/v2/users";
 
 
-test('Get User Details with optional filters', async ({ request }) => {
+test('Get User Details with optional filters', { tag: ['@smoke'] }, async ({ request }) => {
     const userResponse = await request.get(BASE_URL, {
         headers: AUTH_TOKEN,
         params: {
@@ -42,7 +42,7 @@ test.skip('Get Particular User Details', async ({ request }) => {
 });
 
 
-test('Create User', async ({ request }) => {
+test('Create User', { tag: ['@sanity'] }, async ({ request }) => {
     const userData = {
         name: `first_${Date.now()}`,
         email: `automation_${Date.now()}@open.test`,

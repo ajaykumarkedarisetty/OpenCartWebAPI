@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
 
 });
 
-test('Verify Account Login page is displayed successfully', async () => {
+test('Verify Account Login page is displayed successfully', { tag: ['@smoke'] }, async () => {
     expect(await loginpage.getLoginPageTitle()).toBe('Account Login');
 });
 
@@ -28,7 +28,7 @@ test('Verify error message is displayed for invalid login credentials', async ()
     expect.soft(loginError.trim()).toBeTruthy();
 });
 
-test('Verify user can login successfully with valid credentials', async () => {
+test('Verify user can login successfully with valid credentials', { tag: ['@sanity'] }, async () => {
     await loginpage.doLogin(
         'ajaykumarkedarisetty@gmail.com',
         'Venicetata@2026'

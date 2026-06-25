@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv'
 
 //ENV=qa npx playwright test
-const ENV = process.env.ENV || 'qa';
+const ENV = process.env.ENV || 'Qa';
 dotenv.config({ path: `config/.env.${ENV}` });
 
 export default defineConfig({

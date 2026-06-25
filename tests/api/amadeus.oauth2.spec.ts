@@ -26,7 +26,7 @@ test.beforeEach('POST -- generate the access token', async ({ request }) => {
 });
 
 
-test('GET -- get location data', async ({ request }) => {
+test('GET -- get location data', { tag: ['@smoke'] }, async ({ request }) => {
 
     //https://test.api.amadeus.com/v1/reference-data/locations?subType=CITY,AIRPORT&keyword=MUC&countryCode=DE
     let baseURL = 'https://test.api.amadeus.com';

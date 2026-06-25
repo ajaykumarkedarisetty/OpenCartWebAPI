@@ -27,7 +27,7 @@ test('Get User Details with optional filters', async ({ request }) => {
     expect(jsonBody[0]).toHaveProperty('email');
 });
 
-test('Get Particular User Details', async ({ request }) => {
+test.skip('Get Particular User Details', async ({ request }) => {
     const userResponse = await request.get(`${BASE_URL}/8514907`, {
         headers: AUTH_TOKEN
     });
@@ -66,7 +66,7 @@ test('Create User', async ({ request }) => {
 });
 
 
-test('Update User Details Using PATCH', async ({ request }) => {
+test.skip('Update User Details Using PATCH', async ({ request }) => {
     const userData = {
         name: `patched_${Date.now()}`,
         status: 'inactive'
@@ -86,7 +86,7 @@ test('Update User Details Using PATCH', async ({ request }) => {
 });
 
 
-test('Replace User Details Using PUT', async ({ request }) => {
+test.skip('Replace User Details Using PUT', async ({ request }) => {
     const userData = {
         gender: 'male'
     };

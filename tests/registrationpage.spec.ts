@@ -33,12 +33,11 @@ for (let row of testData) {
         await registrationPage.completeRegistration(
             row.firstName,
             row.lastName,
-            row.email,
+            `automation_${Date.now()}@test.com`,
             row.telephone,
             row.password,
             row.newsletter,
         );
         expect(await registrationPage.getAccountCreatedHeaderText()).toBe('Your Account Has Been Created!')
-        await page.pause();
     });
 }

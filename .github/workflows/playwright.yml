@@ -16,8 +16,8 @@ on:
         type: choice
         options:
           - QA
-          - stage
-          - dev
+          - Stage
+          - Dev
 
 jobs:
   test:

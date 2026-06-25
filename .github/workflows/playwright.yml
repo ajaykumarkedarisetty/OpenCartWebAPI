@@ -18,6 +18,7 @@ on:
           - Qa
           - Stage
           - Dev
+          - Prod
 
 jobs:
   test:

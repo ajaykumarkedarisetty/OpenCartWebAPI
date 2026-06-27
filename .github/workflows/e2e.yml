@@ -76,7 +76,7 @@ jobs:
       - name: Checkout QA repo
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIFramework
+          repository: ajaykumarkedarisetty/OpenCartWebAPI
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -365,7 +365,7 @@ jobs:
           echo "========================================="
           npx playwright test --project=chromium --grep @smoke
         env:
-          ENV: prod
+          ENV: Prod
           BASE_URL: ${{ secrets.BASE_URL }}
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
@@ -603,7 +603,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "🎭 CI/CD Pipeline — ${{ steps.status.outputs.overall }} — ${{ github.ref_name }}"
-          to: naveenanimation20@gmail.com,training@naveenautomationlabs.com,nkt.agarwal3@gmail.com,kdpatel8184@gmail.com
+          to: ajaykumarkedarisetty@gmail.com
           from: "CI Bot <${{ secrets.EMAIL_USERNAME }}>"
           html_body: file://dashboard.html
 

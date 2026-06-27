@@ -4,7 +4,10 @@ const TOKEN = process.env.API_TOKEN!;
 const AUTH_HEADER = {
     Authorization: `Bearer ${TOKEN}`,
 };
+const BASE_URL = process.env.API_BASE_URL!;
+
 let userId: number;
+test.use({ apiBaseUrl: BASE_URL });
 
 test.describe.serial('Executing E2E go rest crud api test', () => {
 

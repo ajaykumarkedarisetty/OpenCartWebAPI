@@ -1,14 +1,16 @@
-import { APIHealper } from '../../src/api/APIHelper';
 import { test, expect } from '../../src/fixtures/apifixtures';
 
+const BASE_URL = process.env.API_BASE_URL!;
 const TOKEN = process.env.API_TOKEN!;
 const AUTH_HEADER = {
     Authorization: `Bearer ${TOKEN}`,
 };
 
+test.use({ apiBaseUrl: BASE_URL });
 
 
-async function createUser(apiHelper: any) {
+
+async function createUser(apiHelper:any) {
     // Prepare sample user data for the create request
     const userData = {
         name: `create_${Date.now()}`,

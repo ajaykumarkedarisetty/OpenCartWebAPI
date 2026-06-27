@@ -42,7 +42,7 @@ test.skip('Get Particular User Details', async ({ request }) => {
 });
 
 
-test('Create User', { tag: ['@sanity'] }, async ({ request }) => {
+test('Create User', async ({ request }) => {
     const userData = {
         name: `first_${Date.now()}`,
         email: `automation_${Date.now()}@open.test`,

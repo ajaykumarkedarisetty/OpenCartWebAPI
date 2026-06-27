@@ -1,0 +1,2 @@
+user creds: qatest@test.com : Venicetata@2026
+Home Page Headers: My Account,My Orders,My Affiliate Account,Newsletter
